@@ -1,6 +1,6 @@
 package academy.devdojo.maratonajava.introducao;
 
-public class OperadoresP4 {
+public class OperadoresP5 {
     public static void main(String[] args) {
         double bonus = 1800;
         bonus += 1000;
