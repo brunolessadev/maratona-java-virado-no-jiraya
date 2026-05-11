@@ -19,5 +19,8 @@ public class EstudanteTest01 {
 
         impressora.Imprime(estudante01);
         impressora.Imprime(estudante02);
+        System.out.println("=============================");
+        impressora.Imprime(estudante01);
+        impressora.Imprime(estudante02);
     }
 }
