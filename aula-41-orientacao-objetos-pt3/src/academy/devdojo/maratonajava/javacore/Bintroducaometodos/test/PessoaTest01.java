@@ -7,7 +7,6 @@ public class PessoaTest01 {
         Pessoa pessoa = new Pessoa();
         pessoa.setNome("Jiraya");
         pessoa.setIdade(70);
-        System.out.println(pessoa.getNome());
-        System.out.println(pessoa.getIdade());
+        pessoa.imprime();
     }
 }
