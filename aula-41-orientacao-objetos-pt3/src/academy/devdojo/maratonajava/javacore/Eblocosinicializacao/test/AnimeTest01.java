@@ -9,6 +9,5 @@ public class AnimeTest01 {
         for (int episodio : anime.getEpisodios()) {
             System.out.print(episodio + " ");
         }
-
     }
 }
