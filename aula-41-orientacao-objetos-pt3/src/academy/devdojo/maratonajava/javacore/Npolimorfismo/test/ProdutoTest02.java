@@ -2,6 +2,7 @@ package academy.devdojo.maratonajava.javacore.Npolimorfismo.test;
 
 import academy.devdojo.maratonajava.javacore.Npolimorfismo.dominio.Computador;
 import academy.devdojo.maratonajava.javacore.Npolimorfismo.dominio.Produto;
+import academy.devdojo.maratonajava.javacore.Npolimorfismo.dominio.Tomate;
 
 public class ProdutoTest02 {
     public static void main(String[] args) {
@@ -11,7 +12,7 @@ public class ProdutoTest02 {
         System.out.println(produto.calcularImposto());
         System.out.println("------------------------------");
 
-        Produto produto2 = new Computador("Americano", 20);
+        Produto produto2 = new Tomate("Americano", 20);
         System.out.println(produto2.getNome());
         System.out.println(produto2.getValor());
         System.out.println(produto2.calcularImposto());
