@@ -46,7 +46,7 @@ public class TemporalAdjusterTest01 {
         now = LocalDate.now().withDayOfMonth(27).with(new ObterProximoDiaUtil());
         System.out.println(now);
         System.out.println(now.getDayOfWeek());
-        
+
         now = LocalDate.now().withDayOfMonth(28).with(new ObterProximoDiaUtil());
         System.out.println(now);
         System.out.println(now.getDayOfWeek());
