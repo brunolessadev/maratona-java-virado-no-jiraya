@@ -10,7 +10,7 @@ public class FileTest01 {
     public static void main(String[] args) {
         File file = new File("D:\\Programando\\repositorio-maratona-java-virado-no-jiraya\\aula-41-orientacao-objetos-pt3\\arquivo\\file.txt");
         try {
-            
+
             boolean isCreated = file.createNewFile();
             System.out.println("Foi Criado ? "+isCreated);
             System.out.println("path " +file.getName());
