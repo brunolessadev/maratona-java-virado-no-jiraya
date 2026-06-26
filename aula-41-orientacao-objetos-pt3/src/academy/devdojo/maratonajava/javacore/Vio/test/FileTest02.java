@@ -5,6 +5,7 @@ import java.io.IOException;
 
 public class FileTest02 {
     public static void main(String[] args) throws IOException {
+
         File fileDiretorio = new File("arquivo");
         boolean isDiretorioCriado = fileDiretorio.mkdir();
         System.out.println(isDiretorioCriado);
