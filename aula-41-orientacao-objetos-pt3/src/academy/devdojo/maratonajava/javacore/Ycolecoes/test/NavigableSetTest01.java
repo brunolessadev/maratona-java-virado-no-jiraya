@@ -14,9 +14,11 @@ class SmartphoneMarcaComparator implements Comparator<Smartphone>{
     }
 }
 
+
+
 public class NavigableSetTest01 {
     public static void main(String[] args) {
-        NavigableSet <Smartphone> set = new TreeSet<>(new SmartphoneMarcaComparator());
+        NavigableSet <Smartphone> set = new TreeSet<>(new SmartphoneMarcaComparator2());
         Smartphone smartphone = new Smartphone("123", "Nokia");
         set.add(smartphone);
         System.out.println(set);
@@ -28,9 +30,12 @@ public class NavigableSetTest01 {
         mangas.add(new Manga(3L,"Attack on titan",11.20,2));
         mangas.add(new Manga(2L,"Dragon Ball",2.99,0));
         mangas.add(new Manga(10L,"Aaragon",2.99,0));
+
         for (Manga manga : mangas) {
             System.out.println(manga);
         }
+
+
 
     }
 }
