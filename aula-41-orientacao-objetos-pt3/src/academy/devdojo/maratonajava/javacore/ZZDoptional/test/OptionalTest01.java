@@ -14,12 +14,13 @@ public class OptionalTest01 {
         System.out.println(o3);
         System.out.println("--------------");
 
-        Optional<String> nameOptional = Optional.ofNullable(findName("Naruto"));
+
+        Optional<String> nameOptional = Optional.ofNullable(findName("Naruto").toUpperCase());
         String empty = nameOptional.orElse("EMPTY");
         System.out.println(empty);
     }
     private static String findName(String name){
-        List<String> list = List.of("Naruto", "Hinata");
+        List<String> list = List.of("Naruto", "Hinata", "Boruto");
         int i = list.indexOf(name);
         if (i != -1){
             return list.get(i);
