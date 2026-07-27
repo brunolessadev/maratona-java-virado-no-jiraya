@@ -38,5 +38,7 @@ public class StreamTest11 {
 
         String titles = lightNovels.stream().map(LightNovel::getTitle).collect(Collectors.joining(", "));
         System.out.println(titles);
+
+
     }
 }
