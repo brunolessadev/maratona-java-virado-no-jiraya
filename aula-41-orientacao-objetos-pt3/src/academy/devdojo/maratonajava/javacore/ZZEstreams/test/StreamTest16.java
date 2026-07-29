@@ -27,6 +27,8 @@ public class StreamTest16 {
         sumLongStreamIterate(num);
         System.out.println("-------------------");
         sumLongParallelStreamIterate(num);
+        System.out.println("-------------------");
+        sumLongWhile(num);
 
     }
 
@@ -69,6 +71,25 @@ public class StreamTest16 {
         System.out.println("Sum Long Stream Parallel Iterate");
         long init = System.currentTimeMillis();
         long result = LongStream.rangeClosed(1L, num).parallel().reduce(0L,Long::sum);
+        long end = System.currentTimeMillis();
+        System.out.println(result + " " + (end - init) + "ms");
+    }
+
+    private static void sumLongWhile(long num) {
+        System.out.println("Sum Long While");
+        long init = System.currentTimeMillis();
+
+        long result = 0L;
+        long i = 1L;
+
+        while (true) {
+            if (i > num) {
+                break;
+            }
+            result += i;
+            i++;
+        }
+
         long end = System.currentTimeMillis();
         System.out.println(result + " " + (end - init) + "ms");
     }
