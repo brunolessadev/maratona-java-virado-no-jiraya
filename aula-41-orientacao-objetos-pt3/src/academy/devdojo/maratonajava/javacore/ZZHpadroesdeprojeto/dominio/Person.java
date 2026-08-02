@@ -23,18 +23,26 @@ public class Person {
                 '}';
     }
 
-    public static class PersonBuilder {
+
+    public static final class PersonBuilder {
         private String firstName;
         private String lastName;
         private String userName;
         private String email;
+
+        private PersonBuilder() {
+        }
+
+        public static PersonBuilder builder() {
+            return new PersonBuilder();
+        }
 
         public PersonBuilder firstName(String firstName) {
             this.firstName = firstName;
             return this;
         }
 
-        public PersonBuilder lastname(String lastName) {
+        public PersonBuilder lastName(String lastName) {
             this.lastName = lastName;
             return this;
         }
@@ -50,7 +58,10 @@ public class Person {
         }
 
         public Person build() {
-            return new Person(firstName, lastName, userName, email);
+            Person person = new Person(firstName, null, null, email);
+            person.lastName = this.lastName;
+            person.userName = this.userName;
+            return person;
         }
     }
 }
