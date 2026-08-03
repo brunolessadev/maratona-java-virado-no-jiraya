@@ -6,11 +6,27 @@ public class Person {
     private String userName;
     private String email;
 
-    public Person(String firstName, String lastname, String username, String email) {
+    public Person(String firstName, String lastName, String userName, String email) {
         this.firstName = firstName;
-        this.lastName = lastname;
-        this.userName = username;
+        this.lastName = lastName;
+        this.userName = userName;
         this.email = email;
+    }
+
+    public String getFirstName() {
+        return firstName;
+    }
+
+    public String getLastName() {
+        return lastName;
+    }
+
+    public String getUserName() {
+        return userName;
+    }
+
+    public String getEmail() {
+        return email;
     }
 
     @Override
@@ -22,7 +38,6 @@ public class Person {
                 ", email='" + email + '\'' +
                 '}';
     }
-
 
     public static final class PersonBuilder {
         private String firstName;
@@ -58,10 +73,23 @@ public class Person {
         }
 
         public Person build() {
-            Person person = new Person(firstName, null, null, email);
-            person.lastName = this.lastName;
-            person.userName = this.userName;
-            return person;
+            return new Person(firstName, lastName, userName, email);
+        }
+
+        public String getFirstName() {
+            return firstName;
+        }
+
+        public String getLastName() {
+            return lastName;
+        }
+
+        public String getUserName() {
+            return userName;
+        }
+
+        public String getEmail() {
+            return email;
         }
     }
 }
