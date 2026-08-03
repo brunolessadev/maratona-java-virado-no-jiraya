@@ -1,12 +1,12 @@
 version: '2.4'
 services:
   db:
-    image: mysql
+    image: mysql:8.0
     container_name: mysql
     environment:
       MYSQL_ROOT_PASSWORD: root
     ports:
-      - "3306:3307"
+      - "3306:3306"
     volumes:
       - anime_data:/var/lib/mysql
 
