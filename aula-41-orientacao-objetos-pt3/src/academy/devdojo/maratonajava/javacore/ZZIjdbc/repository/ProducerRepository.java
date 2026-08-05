@@ -133,7 +133,48 @@ public class ProducerRepository {
                     .name(rs.getString("name"))
                     .build());
 
+            log.info("First row? '{}'", rs.first());
+            log.info("Row number? '{}'", rs.getRow());
+            log.info(Producer
+                    .builder()
+                    .id(rs.getInt("id"))
+                    .name(rs.getString("name"))
+                    .build());
 
+            log.info("Row Absolute? '{}'", rs.absolute(2));
+            log.info("Row number? '{}'", rs.getRow());
+            log.info(Producer
+                    .builder()
+                    .id(rs.getInt("id"))
+                    .name(rs.getString("name"))
+                    .build());
+
+            log.info("Row Relative? '{}'", rs.relative(-1));
+            log.info("Row number? '{}'", rs.getRow());
+            log.info(Producer
+                    .builder()
+                    .id(rs.getInt("id"))
+                    .name(rs.getString("name"))
+                    .build());
+
+            log.info("Is last? '{}'", rs.isLast());
+            log.info("Row number? '{}'", rs.getRow());
+
+            log.info("Is first? '{}'", rs.isFirst());
+            log.info("Row number? '{}'", rs.getRow());
+
+            log.info("Last row? '{}'", rs.last());
+            log.info("------------------------");
+
+            rs.next();
+            log.info("After Last row? '{}'", rs.isAfterLast());
+            while (rs.previous()){
+                log.info(Producer
+                        .builder()
+                        .id(rs.getInt("id"))
+                        .name(rs.getString("name"))
+                        .build());
+            }
 
         } catch (SQLException e) {
             log.error("Error while trying to find all producers ", e);
