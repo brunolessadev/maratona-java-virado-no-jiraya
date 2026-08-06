@@ -10,8 +10,8 @@ import java.util.List;
 @Log4j2
 public class ConnectionFactoryTest01 {
     public static void main(String[] args){
-       Producer producer = Producer.builder().name("Studio Deen").build();
-       Producer producerToUpdate = Producer.builder().id(1).name("Mad House").build();
+//       Producer producer = Producer.builder().name("Studio Deen").build();
+//       Producer producerToUpdate = Producer.builder().id(1).name("Mad House").build();
 //        ProducerService.save(producer);
 //        ProducerService.delete(4);
 //        ProducerService.update(producerToUpdate);
@@ -20,6 +20,8 @@ public class ConnectionFactoryTest01 {
 //        log.info("Producers found '{}'", producers);
 //        ProducerService.showProducerMetaData();
 //        ProducerService.showDriverMetaData();
-        ProducerService.showTypeScrollWorking();
+//        ProducerService.showTypeScrollWorking();
+        List<Producer> producers = ProducerService.findByNameAndUpdateToUpperCase("Deen");
+        log.info("Producers found '{}'", producers);
     }
 }
