@@ -15,4 +15,8 @@ public class ProducersServicesRowSet {
         ProducerRepositoryRowSet.updateJdbcRowSet(producer);
     }
 
+    public static void updateCachedRowSet(Producer producer){
+        ProducerRepositoryRowSet.updateCachedRowSet(producer);
+    }
+
 }
