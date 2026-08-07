@@ -3,16 +3,21 @@ package academy.devdojo.maratonajava.javacore.ZZIjdbc.repository;
 import academy.devdojo.maratonajava.javacore.ZZIjdbc.conn.ConnectionFactory;
 import academy.devdojo.maratonajava.javacore.ZZIjdbc.dominio.Producer;
 import academy.devdojo.maratonajava.javacore.ZZIjdbc.listener.CustomRowSetListener;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 import javax.sql.rowset.CachedRowSet;
 import javax.sql.rowset.JdbcRowSet;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
+import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
 
 public class ProducerRepositoryRowSet {
+    private static final Logger log = LogManager.getLogger(ProducerRepositoryRowSet.class);
+
     public static List<Producer> findByNameJdbcRowSet(String name){
         String sql = "SELECT * FROM anime_store.producer where name like ?;";
         List<Producer> producers = new ArrayList<>();
@@ -77,4 +82,5 @@ public class ProducerRepositoryRowSet {
             throw new RuntimeException(e);
         }
     }
+
 }
