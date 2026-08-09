@@ -39,7 +39,26 @@ public class ProducerRepository {
     private static PreparedStatement createPrepareStatementFindByName(Connection conn, String name) throws SQLException {
         String sql = "SELECT * FROM anime_store.producer where name like ?;";
         PreparedStatement ps = conn.prepareStatement(sql);
-        ps.setString(1, String.format("%%%s%%",name));
+        ps.setString(1, String.format("%%%s%%", name));
+        return ps;
+    }
+
+    public static void delete(int id) {
+
+        try (Connection conn = ConnectionFactory.getConnection();
+             PreparedStatement ps = createPrepareStatementDelete(conn, id)) {
+            ps.execute();
+            log.info("Deleted producer '{}' from the database", id);
+        } catch (SQLException e) {
+            log.error("Error while trying to delete producer '{}'", id, e);
+            throw new RuntimeException(e);
+        }
+    }
+
+    private static PreparedStatement createPrepareStatementDelete(Connection conn, Integer id) throws SQLException {
+        String sql = "DELETE FROM `anime_store`.`producer` WHERE (`id` = ? );";
+        PreparedStatement ps = conn.prepareStatement(sql);
+        ps.setInt(1, id);
         return ps;
     }
 }
