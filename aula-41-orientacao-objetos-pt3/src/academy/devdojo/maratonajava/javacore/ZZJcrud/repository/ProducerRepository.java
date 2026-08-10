@@ -61,4 +61,23 @@ public class ProducerRepository {
         ps.setInt(1, id);
         return ps;
     }
+
+
+    public static void save(Producer producer) {
+        log.info("Saving Producer '{}'", producer);
+        try (Connection conn = academy.devdojo.maratonajava.javacore.ZZIjdbc.conn.ConnectionFactory.getConnection();
+             PreparedStatement ps = createPreparedStatementSave(conn,producer)) {
+            ps.execute();
+        } catch (SQLException e) {
+            log.error("Error while trying to update producer '{}'", producer.getId(), e);
+            throw new RuntimeException(e);
+        }
+    }
+
+    private static PreparedStatement createPreparedStatementSave(Connection conn, Producer producer) throws SQLException {
+        String sql = "INSERT INTO `anime_store`.`producer` (`name`) VALUES ( ? );";
+        PreparedStatement ps = conn.prepareStatement(sql);
+        ps.setString(1, producer.getName());
+        return ps;
+    }
 }
