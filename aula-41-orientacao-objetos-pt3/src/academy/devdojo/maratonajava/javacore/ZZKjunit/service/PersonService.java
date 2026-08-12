@@ -6,6 +6,7 @@ import java.util.List;
 import java.util.Objects;
 import java.util.stream.Collectors;
 
+//USANDO CLASSES DE TEST COM MVN com JUnit 5
 public class PersonService {
     public boolean isAdult(Person person){
 //        Objects.requireNonNull(person, "Person can't be null");
